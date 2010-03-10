@@ -27,3 +27,23 @@ password_file = /path/to/trac.htdigest
 htdigest_realm = TracDigestRealm
 }}}
 
+=== Radius ==
+
+You can configure this through the Web UI or the trac.ini file.
+
+Provide the IP address and authentication port of your RADIUS
+server. RADIUS uses UDP port 1813 for authentication, older servers
+use 1645.  You must also supply a shared secret which the RADIUS
+server admin will give you.
+
+{{{
+[account-manager]
+force_passwd_change = false
+password_store = RadiusAuthStore
+persistent_sessions = false
+radius_authport = 1645
+radius_secret = SqueamishOssifrage
+radius_server = 10.9.8.7
+}}}
+
+This back-end does not support user listing or changes.
