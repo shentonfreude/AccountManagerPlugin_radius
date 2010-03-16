@@ -1,0 +1,49 @@
+= TracAccountManager =
+
+A user account management plugin for Trac.
+
+== Installation ==
+ 1. Run: python setup.py bdist_egg
+ 2. If necessary create a folder called "plugins" in your Trac environment.
+ 3. Copy the .egg file from the dist folder created by step 1 into the "plugins"
+    directory of your Trac environment.
+
+== Configuration ==
+Add one of the following sections to trac.ini to manage an Apache htpasswd or
+htdigest file.
+
+=== Htpasswd ===
+{{{
+[account-manager]
+password_format = htpasswd
+password_file = /path/to/trac.htpasswd
+}}}
+
+=== Htdigest ===
+{{{
+[account-manager]
+password_format = htdigest
+password_file = /path/to/trac.htdigest
+htdigest_realm = TracDigestRealm
+}}}
+
+=== Radius ==
+
+You can configure this through the Web UI or the trac.ini file.
+
+Provide the IP address and authentication port of your RADIUS
+server. RADIUS uses UDP port 1813 for authentication, older servers
+use 1645.  You must also supply a shared secret which the RADIUS
+server admin will give you.
+
+{{{
+[account-manager]
+force_passwd_change = false
+password_store = RadiusAuthStore
+persistent_sessions = false
+radius_authport = 1645
+radius_secret = SqueamishOssifrage
+radius_server = 10.9.8.7
+}}}
+
+This back-end does not support user listing or changes.
