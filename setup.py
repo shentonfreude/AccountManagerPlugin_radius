@@ -10,7 +10,7 @@ from setuptools import setup
 
 setup(
     name = 'TracAccountManager',
-    version = '0.2.1',
+    version = '0.2.2',
     author = 'Matthew Good',
     author_email = 'trac@matt-good.net',
     url = 'http://trac-hacks.org/wiki/AccountManagerPlugin',
@@ -18,7 +18,7 @@ setup(
 
     license = 'THE BEER-WARE LICENSE',
 
-    zip_safe=True,
+    zip_safe=False,
     packages=['acct_mgr'],
     package_data={'acct_mgr': ['templates/*.html',
                                'templates/*.txt']},
