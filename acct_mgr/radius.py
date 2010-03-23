@@ -61,11 +61,11 @@ class RadiusAuthStore(Component):
         try:
             reply = client.SendPacket(req)
         except Timeout, e:
-            self.log.error("Timeout contacting server=% authport=%s: %s" % (
+            self.log.error("Timeout contacting server=%s authport=%s: %s" % (
                     self.radius_server, self.radius_authport, e))
             return None
         except Exception, e:    # TOO BROAD
-            self.log.error("Error sending to server=% authport=%s: %s" % (
+            self.log.error("Error sending to server=%s authport=%s: %s" % (
                     self.radius_server, self.radius_authport, e))
             return None
         self.log.debug("RADIUS authenticate check reply.code=%s" % reply.code)
