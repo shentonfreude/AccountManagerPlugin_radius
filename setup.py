@@ -25,7 +25,7 @@ setup(
 
     install_requires = [
         #'trac>=0.11',
-        'pyrad>=1.2',                   # for RADIUS authentication
+        'pyrad>=1.2',           # for RADIUS authentication
     ],
 
     entry_points = {
