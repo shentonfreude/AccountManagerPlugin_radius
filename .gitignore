@@ -1,0 +1,7 @@
+.virtualenv
+build
+dist
+*.egg-info/
+*.pyc
+*~
+
